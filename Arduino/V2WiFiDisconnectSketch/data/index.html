@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<title id='pageTitle'>WiFi Provision</title>
+</head>
+
+<style>
+body {
+    background-color: #f5f5f5;
+}
+
+#main-content {
+    padding: 1em 1em;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+</style>
+
+
+
+<body>
+
+	<div>
+		<nav class="navbar navbar-inverse bg-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" style="padding-right: 0px;" href="#">AFG Autisme</a>
+					<i style="color: white;">(beta)</i>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+
+
+
+<div th:replace="header :: navbar"></div>
+	<th:block th:if="${!#authorization.expression('isAuthenticated()')}">
+		<div id="main-content" class="container">
+<h1>WiFi Provision Interface</h1>
+<form class='form' action='/' method='post'>
+<div class='row'>
+<div class='form-group col-md-4'>
+<label for='name' class='control-label'>SSID : </label>
+<SELECT name='user_ssid' size='1' id='user_ssid' class='form-control'>
+  <option value="value1">Avec les lapins</option>
+  <option value="value2" selected>Avec les canards</option>
+  <option value="value3">Pas là</option>
+</SELECT>
+    </div>
+    </div>
+    <div class='row'>
+    <div class='form-group col-md-4'>
+      <label for='password' class='control-label'>Password : </label>
+        <input id='password' class='form-control' type='password' name='user_pwd'>
+    </div>
+    </div>
+    <div class='row'>
+          <div class='col-md-4'>
+            <div class='form-group pull-right'>
+              <button class='btn btn-success' type='submit'><span class='glyphicon glyphicon-ok'></span> Connect device</button>
+            </div>
+          </div>
+        </div>
+  </form>
+  </body>
+  </html>
