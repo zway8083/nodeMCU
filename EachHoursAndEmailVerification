@@ -339,22 +339,7 @@ void loop() {
         Serial.println("---");
         Serial.print("Mouvement détecté : ");
         Serial.println(tmp);
-        thisHour=true;
         prepareJson(tmp, device_id);
-        simple_wifi_connect(WiFiSSID, WiFiPWD);
-        yield();
-        send_message(tmp, 1, thisHour, device_id);
-        yield();
-        Serial.println(WiFi.status());
-        wifi_disconnect();
-        //simple_wifi_connect(WiFiSSID, WiFiPWD);
-        //yield();
-        prepareJson(tmp, device_id);
-        //yield();
-        //Serial.println(WiFi.status());
-        //wifi_disconnect();
-        //yield();
-        Serial.println(WiFi.status());
         Serial.print(pause/1000);
         Serial.print(" secondes d'attente avant le prochain mouvement : ");
       } 
