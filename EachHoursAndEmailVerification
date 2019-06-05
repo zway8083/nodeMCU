@@ -786,7 +786,7 @@ void send_confirmation_connection(char* device_id){
     JSONencoder3.printTo(first_connection);
     Serial.println("first_connection :" + first_connection);
     HTTPClient http;    //Declare object of class HTTPClient
-    http.begin("http://35.187.36.227/api/event2");      //Specify request destination   En local 100.93.130.233 en vrai 
+    http.begin("http://35.187.36.227/api/event2");      //Specify request destination   
     http.addHeader("Content-Type", "application/json");  //Specify content-type header
     int httpCode = http.POST(first_connection);   //Send the request
     if(httpCode > 0) {
@@ -1057,7 +1057,7 @@ String addScanToHTML (String responseHTML, String newHTML) {
           "<div class='row'>"
             "<div class='form-group col-md-4'>"
               "<label for='name' class='control-label'>New serial code : </label>"
-              "<input id='password' class='form-control' type='text' name='device_serial' maxlength="24">"
+              "<input id='password' class='form-control' type='text' name='device_serial' maxlength='31'>"
             "</div>"
           "</div>"
           "<div class='row'>"
